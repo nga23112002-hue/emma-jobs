@@ -37,4 +37,759 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
     body {
-      font-family: '
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .modal-backdrop {
+      background-color: rgba(9, 26, 48, 0.75);
+      backdrop-filter: blur(4px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+  <!-- Top Announcement Bar -->
+  <aside aria-label="重要規範說明" class="bg-amber-500 text-slate-950 font-bold px-4 py-2 text-xs sm:text-sm text-center shadow-sm">
+    <span>📢 體檢規範依專案同意書約定：同意書載明補助者始享補助；未提及體檢者一律免體檢！</span>
+  </aside>
+
+  <!-- Header / Navigation -->
+  <header class="bg-brand-900 text-white sticky top-0 z-40 shadow-md border-b border-brand-800">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center font-black text-white text-lg shadow-inner">
+          首
+        </div>
+        <div>
+          <div class="font-bold text-base sm:text-lg leading-tight flex items-center gap-2">
+            首誠人力 招募專區
+            <span class="bg-blue-800 text-blue-200 text-xs px-2 py-0.5 rounded font-normal">艾瑪 (Emma)</span>
+          </div>
+          <div class="text-xs text-slate-300">專屬官方 LINE: @190ktlnc ｜ 分機 #1105</div>
+        </div>
+      </div>
+      <div class="hidden sm:flex items-center space-x-3">
+        <a href="tel:0425600907,1105" class="text-xs flex items-center gap-1 bg-slate-800 hover:bg-slate-700 text-white px-3 py-1.5 rounded-lg border border-slate-700 transition">
+          <i data-lucide="phone" class="w-3.5 h-3.5 text-blue-400"></i>
+          04-2560-0907 #1105
+        </a>
+        <a href="https://lin.ee/L0VkiWF" target="_blank" rel="noopener noreferrer" class="text-xs flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold px-3 py-1.5 rounded-lg transition shadow-sm">
+          <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+          加 LINE 諮詢
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section (High Contrast & Clear Typography) -->
+  <section class="bg-gradient-to-b from-brand-900 via-brand-800 to-slate-900 text-white py-10 sm:py-14 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 bg-blue-900/80 border border-blue-400/40 text-blue-200 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        2026 最新大廠缺額即時更新中
+      </div>
+      <h1 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4 text-white">
+        我是首誠－艾瑪，很開心為您服務！
+      </h1>
+      <p class="text-slate-200 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-6 font-medium">
+        精選台中及台南知名外商、科技大廠、汽機車零件與電商物流專案。<br class="hidden sm:inline">
+        條件透明、薪資全實報，線上 3 步驟快速預約面試！
+      </p>
+
+      <!-- Welcome Flow Guidelines Box -->
+      <div class="bg-slate-800/90 border border-slate-700 text-left p-4 sm:p-5 rounded-2xl max-w-3xl mx-auto shadow-xl">
+        <div class="text-amber-400 font-bold text-sm sm:text-base mb-2 flex items-center gap-2">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+          應徵 3 步驟，艾瑪為您火速安排面試：
+        </div>
+        <ol class="text-xs sm:text-sm text-slate-100 space-y-1.5 list-decimal list-inside font-normal">
+          <li><span class="font-bold text-white">挑選職缺</span> 並截圖或於下方表單勾選</li>
+          <li><span class="font-bold text-white">填寫基本資料</span>：姓名、電話、出生年月日</li>
+          <li><span class="font-bold text-white">選擇方便面試時段</span>：平日 08:00-11:30 & 13:00-16:30</li>
+        </ol>
+        <div class="mt-3 pt-3 border-t border-slate-700/80 flex flex-wrap items-center justify-between text-xs text-slate-300 gap-2">
+          <span>☎ 專線：04-2560-0907 分機 #1105 艾瑪專員</span>
+          <span>📲 官方 LINE：<strong class="text-emerald-400">@190ktlnc</strong></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Catalog Section -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-grow">
+    
+    <!-- Controls Header -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i data-lucide="briefcase" class="w-6 h-6 text-brand-600"></i>
+          在招職缺一覽表
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">
+          點選卡片可查看完整同意書條件；符合標準無體檢要求者皆標註免體檢。
+        </p>
+      </div>
+
+      <!-- Search Input -->
+      <div class="relative w-full md:w-72">
+        <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3 text-slate-400"></i>
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="搜尋職缺、區域、班別..." 
+          class="w-full pl-9 pr-4 py-2 border border-slate-300 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent bg-white shadow-sm"
+        />
+      </div>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap gap-2 mb-6" id="filterContainer">
+      <button onclick="setFilter('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-brand-700 text-white" data-filter="all">全部職缺</button>
+      <button onclick="setFilter('神岡')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="神岡">神岡區</button>
+      <button onclick="setFilter('大雅')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="大雅">大雅區</button>
+      <button onclick="setFilter('大里')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="大里">大里區</button>
+      <button onclick="setFilter('潭子')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="潭子">潭子區</button>
+      <button onclick="setFilter('台南')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="台南">台南新市</button>
+      <button onclick="setFilter('免體檢')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-emerald-50 text-emerald-700 border border-emerald-300 hover:bg-emerald-100" data-filter="免體檢">⚡ 免體檢專區</button>
+    </div>
+
+    <!-- Job Cards Grid -->
+    <div id="jobGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Generated via JS -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-12">
+      <i data-lucide="inbox" class="w-12 h-12 mx-auto text-slate-400 mb-2"></i>
+      <div class="text-slate-600 font-medium">沒有找到符合條件的職缺</div>
+      <div class="text-xs text-slate-400 mt-1">請嘗試更換關鍵字或點擊「全部職缺」</div>
+    </div>
+  </main>
+
+  <!-- Interactive Online Application Form -->
+  <section id="applySection" class="bg-slate-100 border-t border-slate-200 py-10 px-4">
+    <div class="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 bg-blue-100 text-brand-600 rounded-full mb-2">
+          <i data-lucide="send" class="w-6 h-6"></i>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-bold text-slate-900">線上快速面試預約</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">填寫完成後一鍵產生應徵格式，直接傳送給艾瑪專員</p>
+      </div>
+
+      <form id="applyForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">應徵職缺 (可複選或自填)</label>
+          <input 
+            type="text" 
+            id="formJob" 
+            required
+            placeholder="例如：神岡自行車大廠 或 勾選上方職缺" 
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"
+          />
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">您的姓名 *</label>
+            <input 
+              type="text" 
+              id="formName" 
+              required
+              placeholder="請輸入姓名" 
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">聯絡手機 *</label>
+            <input 
+              type="tel" 
+              id="formPhone" 
+              required
+              placeholder="0912-345-678" 
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">出生年月日 (民國或西元) *</label>
+            <input 
+              type="text" 
+              id="formBirth" 
+              required
+              placeholder="例如：85/10/25 或 1996/10/25" 
+              class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"
+            />
+          </div>
+          <div>
+            <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">方便面試時段 (平日) *</label>
+            <select id="formTime" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none bg-white">
+              <option value="平日上午 08:00 - 11:30">平日上午 (08:00 - 11:30)</option>
+              <option value="平日下午 13:00 - 16:30">平日下午 (13:00 - 16:30)</option>
+              <option value="皆可配合專員安排">皆可配合專員安排</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs sm:text-sm font-bold text-slate-700 mb-1">備註說明 (選填)</label>
+          <input 
+            type="text" 
+            id="formNote" 
+            placeholder="例如：有堆高機證照、可立即上班等" 
+            class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-brand-500 focus:outline-none"
+          />
+        </div>
+
+        <button 
+          type="submit" 
+          class="w-full mt-4 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2 text-base"
+        >
+          <i data-lucide="message-square" class="w-5 h-5"></i>
+          產生應徵資料並開啟 LINE 傳送給艾瑪
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Job Detail Modal -->
+  <div id="jobModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop" onclick="closeModalOnBackdrop(event)">
+    <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 p-1">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="modalContent">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Floating Action Bar -->
+  <div class="sm:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-4 py-2.5 flex gap-3 z-40 shadow-lg">
+    <a href="tel:0425600907,1105" class="flex-1 bg-slate-800 text-white text-xs font-bold py-2.5 rounded-xl flex items-center justify-center gap-1.5 shadow">
+      <i data-lucide="phone" class="w-4 h-4 text-blue-400"></i>
+      撥打分機 #1105
+    </a>
+    <a href="https://lin.ee/L0VkiWF" target="_blank" rel="noopener noreferrer" class="flex-1 bg-emerald-600 text-white text-xs font-bold py-2.5 rounded-xl flex items-center justify-center gap-1.5 shadow">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      官方 LINE 諮詢
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 px-4 text-center pb-20 sm:pb-8">
+    <div class="max-w-4xl mx-auto space-y-2">
+      <div class="text-slate-200 font-bold text-sm">首誠人力資源有限公司 招募部</div>
+      <div>招募專員：艾瑪 (Emma) ｜ 專線：(04) 2560-0907 分機 #1105</div>
+      <div>官方 LINE ID：@190ktlnc ｜ 面試預約時段：平日 08:00-11:30 & 13:00-16:30</div>
+      <div class="text-slate-500 pt-2">© 2026 首誠人力. 職缺條件以專案同意書實際約定為準.</div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script>
+    // 職缺資料庫 (依專案同意書，未提及體檢者一律標註免體檢)
+    const jobs = [
+      {
+        id: "sram",
+        title: "神岡外商自行車零件大廠",
+        area: "神岡",
+        road: "神岡區 中山路 / 豐工中路",
+        category: "組裝 / 機台 / 零件包裝",
+        baseSalary: "底薪 $31,000 + 全勤 $1,200",
+        shifts: "早班 07:50~16:10 / 中班 15:50~00:10 / 晚班 23:50~08:10",
+        allowance: "中班津貼 $400/天、夜班津貼 $550/天、噴漆津貼 $3,000/月",
+        bonuses: "帶薪上課4天、每滿3個月久任獎金$3,000、季績效獎金最高$3,000、年度變動獎金、介紹獎金$3,000",
+        medical: "享體檢補助 (任職滿3個月實報實銷)",
+        isNoExam: false,
+        payDay: "每月 5 號發薪 (遇假日提前)",
+        maxSalary: "50,000 ～ 62,000+ 元",
+        features: ["知名外商", "5號發薪", "享體檢補助", "免費供餐", "帶薪受訓"],
+        highlight: "大廠專案！帶薪受訓 4 天立即下產線，夜班津貼高！"
+      },
+      {
+        id: "momo_tainan",
+        title: "知名電商物流大廠 (台南新市倉)",
+        area: "台南",
+        road: "台南市新市區 大營里",
+        category: "電商商品揀貨 / 理貨 / 貼標 / 包裝",
+        baseSalary: "時薪制 (午班B $236/H、夜班 $253/H)",
+        shifts: "午班B 15:00~24:00 ｜ 夜班 00:00~08:00 (目前僅大缺這兩班)",
+        allowance: "排班津貼 (週六/日/國定假日每小時加發 $40，最高 +$320/天)；堆高機證照加發 $25/H",
+        bonuses: "享勞健保、特休、團保",
+        medical: "免體檢 (直接書面審查安排報到)",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "46,000 ～ 55,000+ 元",
+        features: ["免體檢", "急徵大缺", "假日高額加碼", "時薪高達253"],
+        highlight: "目前大缺優先補人！時薪最高 $253，假日出勤每小時再加碼 $40！"
+      },
+      {
+        id: "momo_admin",
+        title: "知名電商物流大廠－行政助理專員 (台南)",
+        area: "台南",
+        road: "台南市新市區 大營里 (近台糖加油站)",
+        category: "文書處理 / 現場行政助理 (需二次面試)",
+        baseSalary: "月薪 $30,000 元",
+        shifts: "固定日班 09:00 ～ 18:00 (中午休息1小時)",
+        allowance: "週休二日 (六日休)、不加班、環境單純",
+        bonuses: "享勞健保、勞退6%、團保、特休",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "30,000 元 (穩定不加班)",
+        features: ["免體檢", "週休六日", "純白領行政", "冷氣房作業"],
+        highlight: "純日班文書處理，週休二日不加班，適合追求穩定工作生活平衡者！"
+      },
+      {
+        id: "weiquan_pack",
+        title: "大里氣動工具大廠－流水線組裝員",
+        area: "大里",
+        road: "大里區 大里路",
+        category: "氣動工具流水線組裝作業",
+        baseSalary: "時薪 $200 / H",
+        shifts: "早班 07:10 ～ 15:30 (超早下班！)",
+        allowance: "加班逾18:00加發伙食津貼 $60、滿月補助安全鞋最高 $700",
+        bonuses: "廠內免費供餐、滿6個月評估轉正職月薪",
+        medical: "免體檢 (書審通過快速報到)",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "45,000 ～ 52,000+ 元",
+        features: ["免體檢", "15:30超早下班", "時薪200", "免費供餐"],
+        highlight: "下午 3:30 就下班避開塞車潮！免體檢直接上工！"
+      },
+      {
+        id: "weiquan_qa",
+        title: "大里氣動工具大廠－品保測試員",
+        area: "大里",
+        road: "大里區 大里路",
+        category: "產品測試作業、簡易手寫報告填寫",
+        baseSalary: "底薪 $29,500 + 加給 $1,500 + 全勤 $1,500 = 基本 $32,500",
+        shifts: "正常班 08:00 ～ 17:00 (休1小時，上下午各休10分鐘)",
+        allowance: "滿月補助安全鞋最高 $700",
+        bonuses: "滿3個月加發久任獎金 $3,000、廠區免費供餐",
+        medical: "享體檢補助 (體檢費補助 50%)",
+        isNoExam: false,
+        payDay: "每月固定發薪",
+        maxSalary: "42,000 ～ 46,000+ 元",
+        features: ["週休二日", "冷氣隔音房", "享體檢補助", "免費供餐"],
+        highlight: "冷氣隔音房工作環境舒適，保障全勤加給底薪 $32,500！"
+      },
+      {
+        id: "s137_gaoyi",
+        title: "大里五金機械－釘槍組裝包裝員 (台灣高壹)",
+        area: "大里",
+        road: "大里區 仁化路 (仁化工業區)",
+        category: "氣動釘槍零件組裝、測試、包裝 (工期至2026年12月底)",
+        baseSalary: "時薪 $196 / H",
+        shifts: "日班 08:00 ～ 17:00 (休息70分鐘)",
+        allowance: "出勤滿8小時加發餐費 $90/天、交通津貼 $50/天、全勤 $1,000/月",
+        bonuses: "久任獎金每滿3個月 $3,000、加班費依法另計",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月 10 號發薪",
+        maxSalary: "43,000 ～ 48,000+ 元",
+        features: ["免體檢", "餐費90/天", "交通津貼", "週休二日"],
+        highlight: "每天多領 $140 津貼 (餐費+交通)！工期穩定至 2026 年底！"
+      },
+      {
+        id: "hongjin",
+        title: "大雅半導體大廠－品保檢驗員 (鴻勁精密)",
+        area: "大雅",
+        road: "大雅區 中清路三段758巷",
+        category: "半導體零件外觀檢驗、機台操作、模組螺絲巡檢",
+        baseSalary: "時薪 $205 / H (中班津貼 +$30/H 即 $235/H)",
+        shifts: "日班 08:00~17:00 ｜ 中班 15:00~00:00 (中班需先早班受訓1個月)",
+        allowance: "白天代訂便當 $80/餐、全廠冷氣房作業",
+        bonuses: "加班費依法規乘 1.34 / 1.67",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "48,000 ～ 60,000+ 元",
+        features: ["免體檢", "冷氣房", "高時薪205起", "週休六日"],
+        highlight: "半導體核心廠房，中班時薪達 $235，加班月領最高上看 6 萬！"
+      },
+      {
+        id: "greendot",
+        title: "大雅知名科技大廠－技術作業員 (綠點)",
+        area: "大雅",
+        road: "大雅區 神林路一段",
+        category: "機台操作、品檢、外觀檢查",
+        baseSalary: "月薪 $30,000 元 起",
+        shifts: "早班 07:50~16:20 ｜ 中班 15:50~00:20 ｜ 夜班 23:50~08:20",
+        allowance: "中班津貼 $200/天、中夜班/夜班津貼 $300/天、夜班餐費 $70/天",
+        bonuses: "早中班免費供餐、三節禮券、滿月享體檢補助最高 $750",
+        medical: "享體檢補助 (滿月補助上限 $750)",
+        isNoExam: false,
+        payDay: "每月 10 號發薪",
+        maxSalary: "45,000 ～ 53,000+ 元",
+        features: ["大廠穩定", "班別津貼", "享體檢補助", "免費供餐"],
+        highlight: "大雅指標性科技大廠，固定班別，夜班津貼+加班待遇優厚！"
+      },
+      {
+        id: "jijia",
+        title: "潭子知名電子大廠－組裝品檢員 (吉嘉)",
+        area: "潭子",
+        road: "潭子區 祥和路",
+        category: "組裝、包裝、品檢、測試作業 (半套無塵衣/冷氣久坐)",
+        baseSalary: "月薪 $31,000 元 起",
+        shifts: "日班 08:00~17:10 ｜ 小夜 15:50~00:30 ｜ 大夜 23:50~08:30",
+        allowance: "小夜津貼 +$30/H、大夜津貼 +$48/H、誤餐費 $80~$100/次",
+        bonuses: "久任最高 $7,000、加班激勵最高 $4,000、夜班完訓獎金高達 $17,000",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "48,000 ～ 55,000+ 元",
+        features: ["免體檢", "冷氣房久坐", "高額完訓獎金", "週休二日"],
+        highlight: "冷氣房久坐舒適，夜班完訓實習獎金合計最高達 17,000 元！"
+      },
+      {
+        id: "cengde",
+        title: "工程技術大廠－設備配管員 (承得外包)",
+        area: "外派",
+        road: "台中 / 彰化二林 / 全台外派支援",
+        category: "廠房設備安裝、工地配管、現場作業",
+        baseSalary: "日薪 $1,700/天 + 餐費 $100/天 + 全勤 $2,000/月",
+        shifts: "日班 08:00 ～ 17:00 (週休六日)",
+        allowance: "外派津貼：外縣市 +$250/天 (包住宿+交通)；彰化 +$150/天 (專車接送)",
+        bonuses: "滿3個月體檢費實報實銷、三節與年終福利",
+        medical: "享體檢補助 (滿3個月實報實銷)",
+        isNoExam: false,
+        payDay: "每月固定發薪",
+        maxSalary: "52,000 ～ 62,000+ 元",
+        features: ["日薪1700", "外派包住", "享體檢補助", "週休六日"],
+        highlight: "基本不加班出勤即有 $41,600！外派津貼加碼衝破 6 萬！"
+      },
+      {
+        id: "tuonasi_pc",
+        title: "后里瑞士機械大廠－生管人員 (托納斯)",
+        area: "后里",
+        road: "后里區 星科園路",
+        category: "生產排程、進度追蹤 (冷氣辦公室/久坐)",
+        baseSalary: "月薪 $31,000 元",
+        shifts: "正常班 08:00 ～ 17:00 (中午休息1小時)",
+        allowance: "週休二日、環境乾淨安靜、不須加班",
+        bonuses: "享勞健保、特休、三節禮品",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月 10 號發薪",
+        maxSalary: "31,000 元 (穩定準時下班)",
+        features: ["免體檢", "冷氣久坐", "週休二日", "不須加班"],
+        highlight: "瑞士外商環境，純內勤生管排程，準時 17:00 下班！"
+      },
+      {
+        id: "tuonasi_wh",
+        title: "后里瑞士機械大廠－倉管人員 (托納斯)",
+        area: "后里",
+        road: "后里區 星科園路",
+        category: "倉庫物料進出、揀料、整理 (冷氣廠房)",
+        baseSalary: "月薪 $31,000 元",
+        shifts: "正常班 08:00 ～ 17:00 (需能配合加班)",
+        allowance: "平日及休息日加班費依法加成計算",
+        bonuses: "享勞健保、勞退、特休、三節禮品",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月 10 號發薪",
+        maxSalary: "40,000 ～ 45,000+ 元",
+        features: ["免體檢", "冷氣房", "外商福利", "週休二日"],
+        highlight: "冷氣倉儲環境，出勤穩定，配合加班月領上看 4.5 萬！"
+      },
+      {
+        id: "fengyi",
+        title: "龍井休閒用品大廠－小晚班作業員 (豐益)",
+        area: "龍井",
+        road: "龍井區 蚵寮路 / 西濱路",
+        category: "機台操作、充氣睡墊/枕頭包裝",
+        baseSalary: "時薪 $196/H + 工作獎金 $1,000 (出勤滿21天)",
+        shifts: "小晚班固定 17:30 ～ 20:30 (每天固定兼職/加班3小時)",
+        allowance: "廠內免費供餐、週休二日",
+        bonuses: "加班費依 1.34 與 1.67 法規超額加成",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "依時數累計 (挑戰 4.8萬~5.4萬)",
+        features: ["免體檢", "小晚班3H", "兼職首選", "免費供餐"],
+        highlight: "小晚班 17:30~20:30 固定時段，適合兼差或副業增加收入！"
+      },
+      {
+        id: "yulun",
+        title: "大雅生技保健廠－包裝選別人員 (昱倫/廣得利)",
+        area: "大雅",
+        road: "大雅區 民生路三段",
+        category: "膠囊錠劑選別、包裝、倉管 (冷氣房作業)",
+        baseSalary: "時薪 $196/H + 工作獎金 $1,000/月",
+        shifts: "日班 08:00 ～ 17:00 (休息1小時)",
+        allowance: "全廠冷氣房、環境乾淨衛生、週休二日",
+        bonuses: "享勞健保、特休、團保",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月 10 號發薪",
+        maxSalary: "36,000 ～ 43,000+ 元",
+        features: ["免體檢", "全廠冷氣房", "生技產業", "乾淨無味"],
+        highlight: "環境極度整潔舒適，男女不拘，工作單純易上手！"
+      },
+      {
+        id: "yonghu",
+        title: "神岡/豐原複材大廠－成型裁切員 (永湖)",
+        area: "神岡",
+        road: "豐原區 榮春街 / 神岡區 豐洲路",
+        category: "碳纖維複合材料裁切、成型、倉儲 (早班無限缺)",
+        baseSalary: "底薪 $30,500 + 全勤 $1,000 = 基本 $31,500/月",
+        shifts: "早班 08:00~17:00 (大缺) ｜ 晚班 20:00~05:00",
+        allowance: "晚班津貼 $600/天 (晚班月津貼可達 $13,200！)",
+        bonuses: "考核通過發放轉正獎金 $5,000、早班免費供餐",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月 10 號發薪",
+        maxSalary: "48,000 ～ 58,000+ 元",
+        features: ["免體檢", "早班無限缺", "晚班津貼600/天", "轉正獎金5000"],
+        highlight: "早班大缺名額無上限！晚班每天津貼高達 $600 元超賺！"
+      },
+      {
+        id: "bentu",
+        title: "大里汽機車大廠－機台/品檢員 (本土)",
+        area: "大里",
+        road: "大里區 四育街",
+        category: "汽機車傳動零件加工、機台操作、品檢待判",
+        baseSalary: "月薪制 $32,000 ～ $35,000 元 起",
+        shifts: "日班 08:00~17:00 ｜ 夜班 (需能配合輪班)",
+        allowance: "中班津貼 $300/天、夜班出勤津貼另計、提供員工餐廳",
+        bonuses: "享年終獎金、定期員工旅遊、特休",
+        medical: "免體檢",
+        isNoExam: true,
+        payDay: "每月固定發薪",
+        maxSalary: "45,000 ～ 55,000+ 元",
+        features: ["免體檢", "知名老牌大廠", "享年終尾牙", "員工旅遊"],
+        highlight: "老字號汽機車大廠，底薪高達 $35,000，福利健全有保障！"
+      }
+    ];
+
+    let currentFilter = 'all';
+
+    // 渲染職缺卡片
+    function renderJobs() {
+      const grid = document.getElementById('jobGrid');
+      const emptyState = document.getElementById('emptyState');
+      const searchTerm = document.getElementById('searchInput').value.trim().toLowerCase();
+
+      grid.innerHTML = '';
+
+      const filtered = jobs.filter(job => {
+        // Filter logic
+        let matchesFilter = false;
+        if (currentFilter === 'all') matchesFilter = true;
+        else if (currentFilter === '免體檢') matchesFilter = job.isNoExam;
+        else matchesFilter = job.area.includes(currentFilter) || job.road.includes(currentFilter);
+
+        // Search logic
+        const matchesSearch = 
+          job.title.toLowerCase().includes(searchTerm) ||
+          job.area.toLowerCase().includes(searchTerm) ||
+          job.road.toLowerCase().includes(searchTerm) ||
+          job.shifts.toLowerCase().includes(searchTerm) ||
+          job.category.toLowerCase().includes(searchTerm) ||
+          job.features.some(f => f.toLowerCase().includes(searchTerm));
+
+        return matchesFilter && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        emptyState.classList.remove('hidden');
+      } else {
+        emptyState.classList.add('hidden');
+        filtered.forEach(job => {
+          const card = document.createElement('div');
+          card.className = "bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col overflow-hidden";
+          
+          // Badge colors
+          const examBadge = job.isNoExam 
+            ? `<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2 py-0.5 rounded text-xs">⚡ 免體檢</span>`
+            : `<span class="bg-blue-100 text-blue-800 border border-blue-300 font-bold px-2 py-0.5 rounded text-xs">🩺 享體檢補助</span>`;
+
+          card.innerHTML = `
+            <div class="p-5 flex-grow">
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-0.5 rounded-full font-bold">📍 ${job.area}</span>
+                ${examBadge}
+              </div>
+              <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-1 leading-snug">${job.title}</h3>
+              <div class="text-xs text-slate-500 mb-3 flex items-center gap-1">
+                <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
+                ${job.road}
+              </div>
+
+              <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-3 mb-3">
+                <div class="text-xs text-slate-500 font-medium">基本待遇</div>
+                <div class="font-black text-brand-600 text-sm sm:text-base">${job.baseSalary}</div>
+                <div class="text-xs text-amber-600 font-bold mt-0.5">預估最高月領：${job.maxSalary}</div>
+              </div>
+
+              <div class="space-y-1.5 text-xs text-slate-600 mb-4">
+                <div class="flex items-start gap-1.5">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400 mt-0.5 shrink-0"></i>
+                  <span>${job.shifts}</span>
+                </div>
+                <div class="flex items-start gap-1.5">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500 mt-0.5 shrink-0"></i>
+                  <span class="text-slate-700 font-medium">${job.highlight}</span>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1 mb-2">
+                ${job.features.map(f => `<span class="bg-slate-100 text-slate-600 text-[11px] px-2 py-0.5 rounded">${f}</span>`).join('')}
+              </div>
+            </div>
+
+            <div class="border-t border-slate-100 p-4 bg-slate-50/60 flex items-center gap-2">
+              <button onclick="openModal('${job.id}')" class="flex-1 bg-white hover:bg-slate-100 text-slate-700 font-bold py-2 rounded-xl text-xs border border-slate-300 transition shadow-sm">
+                查看條件明細
+              </button>
+              <button onclick="selectForApply('${job.title}')" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white font-bold py-2 rounded-xl text-xs transition shadow-sm">
+                立即預約面試
+              </button>
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      }
+
+      lucide.createIcons();
+    }
+
+    // 篩選切換
+    function setFilter(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.dataset.filter === filter) {
+          btn.className = "filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-brand-700 text-white shadow-sm";
+        } else {
+          btn.className = "filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200";
+        }
+      });
+      renderJobs();
+    }
+
+    // Modal 詳情彈窗
+    function openModal(jobId) {
+      const job = jobs.find(j => j.id === jobId);
+      if (!job) return;
+
+      const modalContent = document.getElementById('modalContent');
+      const examNotice = job.isNoExam 
+        ? `<div class="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded text-xs text-emerald-800 font-semibold mb-3">
+             ⚡ 體檢約定：本職缺依專案同意書約定【免體檢】，書面審核通過可直接安排上工！
+           </div>`
+        : `<div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded text-xs text-blue-800 font-semibold mb-3">
+             🩺 體檢約定：本職缺【${job.medical}】，保留收據於規定期限後申請！
+           </div>`;
+
+      modalContent.innerHTML = `
+        <div class="flex items-center gap-2 mb-2">
+          <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-0.5 rounded-full font-bold">📍 ${job.area}</span>
+          <span class="text-xs text-slate-400">發薪日：${job.payDay}</span>
+        </div>
+        <h3 class="text-xl font-black text-slate-900 mb-1">${job.title}</h3>
+        <p class="text-xs text-slate-500 mb-4">${job.road}</p>
+
+        ${examNotice}
+
+        <div class="space-y-3 text-xs sm:text-sm text-slate-700 mb-6">
+          <div class="border-b border-slate-100 pb-2">
+            <span class="font-bold text-slate-900 block mb-0.5">💰 薪資架構與待遇：</span>
+            <div>${job.baseSalary}</div>
+            <div class="text-amber-600 font-bold mt-0.5">配合加班最高月領預估：${job.maxSalary}</div>
+          </div>
+          <div class="border-b border-slate-100 pb-2">
+            <span class="font-bold text-slate-900 block mb-0.5">⏰ 上班時間與班別：</span>
+            <div>${job.shifts}</div>
+          </div>
+          <div class="border-b border-slate-100 pb-2">
+            <span class="font-bold text-slate-900 block mb-0.5">💵 津貼與加碼補助：</span>
+            <div>${job.allowance}</div>
+          </div>
+          <div class="border-b border-slate-100 pb-2">
+            <span class="font-bold text-slate-900 block mb-0.5">🎁 獎金與福利制度：</span>
+            <div>${job.bonuses}</div>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 block mb-0.5">🛠 工作內容與性質：</span>
+            <div>${job.category}</div>
+          </div>
+        </div>
+
+        <div class="flex gap-3">
+          <button onclick="selectForApply('${job.title}'); closeModal();" class="flex-1 bg-brand-600 hover:bg-brand-500 text-white font-bold py-3 rounded-xl text-sm transition shadow">
+            選擇此職缺並預約
+          </button>
+          <a href="https://lin.ee/L0VkiWF" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-3 rounded-xl text-sm transition flex items-center justify-center gap-1 shadow">
+            <i data-lucide="message-circle" class="w-4 h-4"></i>
+            直接問艾瑪
+          </a>
+        </div>
+      `;
+
+      document.getElementById('jobModal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      document.getElementById('jobModal').classList.add('hidden');
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target.id === 'jobModal') closeModal();
+    }
+
+    // 勾選直接帶入預約表單
+    function selectForApply(jobTitle) {
+      const input = document.getElementById('formJob');
+      input.value = jobTitle;
+      document.getElementById('applySection').scrollIntoView({ behavior: 'smooth' });
+      input.focus();
+    }
+
+    // 表單處理：格式化並複製到剪貼簿，直接開啟艾瑪 LINE
+    function handleFormSubmit(e) {
+      e.preventDefault();
+
+      const job = document.getElementById('formJob').value.trim();
+      const name = document.getElementById('formName').value.trim();
+      const phone = document.getElementById('formPhone').value.trim();
+      const birth = document.getElementById('formBirth').value.trim();
+      const time = document.getElementById('formTime').value;
+      const note = document.getElementById('formNote').value.trim();
+
+      const msg = 
+`您好艾瑪！我想應徵面試：
+📌 應徵職缺：${job}
+👤 姓名：${name}
+📱 電話：${phone}
+🎂 生日：${birth}
+⏰ 方便面試時段：${time}
+${note ? '📝 備註說明：' + note : ''}
+
+（已於招募專區完成登記，請協助安排面試梯次，謝謝！）`;
+
+      // Copy to clipboard
+      navigator.clipboard.writeText(msg).then(() => {
+        alert('✅ 資料已自動複製到您的剪貼簿！\n按下確定後將開啟官方 LINE (@190ktlnc)，請直接在聊天室「貼上」傳送給艾瑪專員即可！');
+        window.open('https://lin.ee/L0VkiWF', '_blank');
+      }).catch(() => {
+        alert('請手動複製以下資訊並傳送至 LINE：\n\n' + msg);
+        window.open('https://lin.ee/L0VkiWF', '_blank');
+      });
+    }
+
+    // 搜尋監聽
+    document.getElementById('searchInput').addEventListener('input', renderJobs);
+
+    // 初始化渲染
+    window.onload = () => {
+      renderJobs();
+      lucide.createIcons();
+    };
+  </script>
+</body>
+</html>
