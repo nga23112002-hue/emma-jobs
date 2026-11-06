@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>首誠人力 招募專區｜艾瑪專員 (Emma)</title>
   <meta name="description" content="首誠人力招募專區，招募專員艾瑪 (Emma)。提供知名科技、汽機車、外商自行車大廠、富邦momo物流等職缺，快速預約面試。">
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
@@ -22,12 +20,6 @@
               700: '#1e3a8a',
               800: '#172554',
               900: '#091a30',
-            },
-            accent: {
-              gold: '#f59e0b',
-              emerald: '#10b981',
-              red: '#ef4444',
-              line: '#06c755'
             }
           }
         }
@@ -48,8 +40,8 @@
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
 
   <!-- Top Announcement Bar -->
-  <aside aria-label="重要規範說明" class="bg-amber-500 text-slate-950 font-bold px-4 py-2 text-xs sm:text-sm text-center shadow-sm">
-    <span>📢 體檢規範依專案同意書約定：同意書載明補助者始享補助；未提及體檢者一律免體檢！</span>
+  <aside class="bg-slate-900 text-amber-400 font-bold px-4 py-2 text-xs sm:text-sm text-center border-b border-slate-800">
+    <span>📢 體檢資訊透明化：未提及體檢者一律免體檢；載明需體檢者請依各廠補助規定辦理！</span>
   </aside>
 
   <!-- Header / Navigation -->
@@ -80,19 +72,19 @@
     </div>
   </header>
 
-  <!-- Hero Section (High Contrast & Clear Typography) -->
+  <!-- Hero Section -->
   <section class="bg-gradient-to-b from-brand-900 via-brand-800 to-slate-900 text-white py-10 sm:py-14 px-4">
     <div class="max-w-5xl mx-auto text-center">
       <div class="inline-flex items-center gap-2 bg-blue-900/80 border border-blue-400/40 text-blue-200 text-xs sm:text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        2026 最新大廠缺額即時更新中
+        各廠同意書條件嚴格核對・最新缺額即時更新
       </div>
       <h1 class="text-2xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4 text-white">
         我是首誠－艾瑪，很開心為您服務！
       </h1>
       <p class="text-slate-200 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-6 font-medium">
         精選台中及台南知名外商、科技大廠、汽機車零件與電商物流專案。<br class="hidden sm:inline">
-        條件透明、薪資全實報，線上 3 步驟快速預約面試！
+        條件透明、體檢要求明確標記，線上 3 步驟快速預約面試！
       </p>
 
       <!-- Welcome Flow Guidelines Box -->
@@ -117,7 +109,6 @@
   <!-- Filter & Catalog Section -->
   <main class="max-w-6xl mx-auto px-4 py-8 flex-grow">
     
-    <!-- Controls Header -->
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
       <div>
         <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
@@ -125,11 +116,10 @@
           在招職缺一覽表
         </h2>
         <p class="text-xs sm:text-sm text-slate-500 mt-1">
-          點選卡片可查看完整同意書條件；符合標準無體檢要求者皆標註免體檢。
+          完整呈現同意書條件：體檢狀態包含【免體檢】、【需體檢(無補助)】與【享體檢補助】。
         </p>
       </div>
 
-      <!-- Search Input -->
       <div class="relative w-full md:w-72">
         <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3 text-slate-400"></i>
         <input 
@@ -144,18 +134,16 @@
     <!-- Filter Buttons -->
     <div class="flex flex-wrap gap-2 mb-6" id="filterContainer">
       <button onclick="setFilter('all')" class="filter-btn active px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-brand-700 text-white" data-filter="all">全部職缺</button>
+      <button onclick="setFilter('免體檢')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-emerald-50 text-emerald-700 border border-emerald-300 hover:bg-emerald-100" data-filter="免體檢">⚡ 免體檢</button>
       <button onclick="setFilter('神岡')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="神岡">神岡區</button>
       <button onclick="setFilter('大雅')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="大雅">大雅區</button>
       <button onclick="setFilter('大里')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="大里">大里區</button>
       <button onclick="setFilter('潭子')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="潭子">潭子區</button>
       <button onclick="setFilter('台南')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-white text-slate-700 hover:bg-slate-100 border border-slate-200" data-filter="台南">台南新市</button>
-      <button onclick="setFilter('免體檢')" class="filter-btn px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition bg-emerald-50 text-emerald-700 border border-emerald-300 hover:bg-emerald-100" data-filter="免體檢">⚡ 免體檢專區</button>
     </div>
 
     <!-- Job Cards Grid -->
-    <div id="jobGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Generated via JS -->
-    </div>
+    <div id="jobGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
 
     <!-- Empty State -->
     <div id="emptyState" class="hidden text-center py-12">
@@ -260,9 +248,7 @@
         <i data-lucide="x" class="w-5 h-5"></i>
       </button>
 
-      <div id="modalContent">
-        <!-- Rendered via JS -->
-      </div>
+      <div id="modalContent"></div>
     </div>
   </div>
 
@@ -284,13 +270,13 @@
       <div class="text-slate-200 font-bold text-sm">首誠人力資源有限公司 招募部</div>
       <div>招募專員：艾瑪 (Emma) ｜ 專線：(04) 2560-0907 分機 #1105</div>
       <div>官方 LINE ID：@190ktlnc ｜ 面試預約時段：平日 08:00-11:30 & 13:00-16:30</div>
-      <div class="text-slate-500 pt-2">© 2026 首誠人力. 職缺條件以專案同意書實際約定為準.</div>
+      <div class="text-slate-500 pt-2">© 2026 首誠人力. 職缺條件以各專案同意書約定為準.</div>
     </div>
   </footer>
 
-  <!-- Application Logic -->
   <script>
-    // 職缺資料庫 (依專案同意書，未提及體檢者一律標註免體檢)
+    // 嚴格依同意書校正：
+    // status: 'none' (免體檢) | 'self' (需體檢，無補助) | 'subsidized' (享體檢補助)
     const jobs = [
       {
         id: "sram",
@@ -301,9 +287,9 @@
         baseSalary: "底薪 $31,000 + 全勤 $1,200",
         shifts: "早班 07:50~16:10 / 中班 15:50~00:10 / 晚班 23:50~08:10",
         allowance: "中班津貼 $400/天、夜班津貼 $550/天、噴漆津貼 $3,000/月",
-        bonuses: "帶薪上課4天、每滿3個月久任獎金$3,000、季績效獎金最高$3,000、年度變動獎金、介紹獎金$3,000",
-        medical: "享體檢補助 (任職滿3個月實報實銷)",
-        isNoExam: false,
+        bonuses: "帶薪上課4天、每滿3個月久任獎金$3,000、季績效最高$3,000、年度變動獎金",
+        examType: "subsidized",
+        examDesc: "享體檢補助 (任職滿3個月檢附收據實報實銷)",
         payDay: "每月 5 號發薪 (遇假日提前)",
         maxSalary: "50,000 ～ 62,000+ 元",
         features: ["知名外商", "5號發薪", "享體檢補助", "免費供餐", "帶薪受訓"],
@@ -319,8 +305,8 @@
         shifts: "午班B 15:00~24:00 ｜ 夜班 00:00~08:00 (目前僅大缺這兩班)",
         allowance: "排班津貼 (週六/日/國定假日每小時加發 $40，最高 +$320/天)；堆高機證照加發 $25/H",
         bonuses: "享勞健保、特休、團保",
-        medical: "免體檢 (直接書面審查安排報到)",
-        isNoExam: true,
+        examType: "none",
+        examDesc: "免體檢 (同意書未規範體檢，書面審核通過快速安排報到)",
         payDay: "每月固定發薪",
         maxSalary: "46,000 ～ 55,000+ 元",
         features: ["免體檢", "急徵大缺", "假日高額加碼", "時薪高達253"],
@@ -331,13 +317,13 @@
         title: "知名電商物流大廠－行政助理專員 (台南)",
         area: "台南",
         road: "台南市新市區 大營里 (近台糖加油站)",
-        category: "文書處理 / 現場行政助理 (需二次面試)",
+        category: "文書處理 / 現場行政支援 (需二次面試)",
         baseSalary: "月薪 $30,000 元",
         shifts: "固定日班 09:00 ～ 18:00 (中午休息1小時)",
         allowance: "週休二日 (六日休)、不加班、環境單純",
         bonuses: "享勞健保、勞退6%、團保、特休",
-        medical: "免體檢",
-        isNoExam: true,
+        examType: "none",
+        examDesc: "免體檢 (同意書未規範體檢)",
         payDay: "每月固定發薪",
         maxSalary: "30,000 元 (穩定不加班)",
         features: ["免體檢", "週休六日", "純白領行政", "冷氣房作業"],
@@ -348,17 +334,17 @@
         title: "大里氣動工具大廠－流水線組裝員",
         area: "大里",
         road: "大里區 大里路",
-        category: "氣動工具流水線組裝作業",
+        category: "流水線氣動打釘機組裝作業",
         baseSalary: "時薪 $200 / H",
         shifts: "早班 07:10 ～ 15:30 (超早下班！)",
         allowance: "加班逾18:00加發伙食津貼 $60、滿月補助安全鞋最高 $700",
         bonuses: "廠內免費供餐、滿6個月評估轉正職月薪",
-        medical: "免體檢 (書審通過快速報到)",
-        isNoExam: true,
-        payDay: "每月固定發薪",
+        examType: "none",
+        examDesc: "免體檢 (同意書明確載明無須體檢)",
+        payDay: "每月 10 號發薪",
         maxSalary: "45,000 ～ 52,000+ 元",
         features: ["免體檢", "15:30超早下班", "時薪200", "免費供餐"],
-        highlight: "下午 3:30 就下班避開塞車潮！免體檢直接上工！"
+        highlight: "下午 3:30 就下班避開塞車潮！同意書明確無須體檢！"
       },
       {
         id: "weiquan_qa",
@@ -370,25 +356,25 @@
         shifts: "正常班 08:00 ～ 17:00 (休1小時，上下午各休10分鐘)",
         allowance: "滿月補助安全鞋最高 $700",
         bonuses: "滿3個月加發久任獎金 $3,000、廠區免費供餐",
-        medical: "享體檢補助 (體檢費補助 50%)",
-        isNoExam: false,
-        payDay: "每月固定發薪",
+        examType: "subsidized",
+        examDesc: "享體檢補助 (需做一般勞工及噪音體檢，滿一個月補助50%費用)",
+        payDay: "每月 10 號發薪",
         maxSalary: "42,000 ～ 46,000+ 元",
         features: ["週休二日", "冷氣隔音房", "享體檢補助", "免費供餐"],
         highlight: "冷氣隔音房工作環境舒適，保障全勤加給底薪 $32,500！"
       },
       {
         id: "s137_gaoyi",
-        title: "大里五金機械－釘槍組裝包裝員 (台灣高壹)",
+        title: "大里五金機械－釘槍組裝包裝員 (高壹)",
         area: "大里",
         road: "大里區 仁化路 (仁化工業區)",
         category: "氣動釘槍零件組裝、測試、包裝 (工期至2026年12月底)",
         baseSalary: "時薪 $196 / H",
-        shifts: "日班 08:00 ～ 17:00 (休息70分鐘)",
+        shifts: "日班 08:30 ～ 17:30 (休息70分鐘)",
         allowance: "出勤滿8小時加發餐費 $90/天、交通津貼 $50/天、全勤 $1,000/月",
-        bonuses: "久任獎金每滿3個月 $3,000、加班費依法另計",
-        medical: "免體檢",
-        isNoExam: true,
+        bonuses: "流水線、冷氣房、加班費依法另計",
+        examType: "none",
+        examDesc: "免體檢 (同意書未規範體檢)",
         payDay: "每月 10 號發薪",
         maxSalary: "43,000 ～ 48,000+ 元",
         features: ["免體檢", "餐費90/天", "交通津貼", "週休二日"],
@@ -396,20 +382,20 @@
       },
       {
         id: "hongjin",
-        title: "大雅半導體大廠－品保檢驗員 (鴻勁精密)",
+        title: "大雅半導體大廠－品保檢驗員 (鴻勁)",
         area: "大雅",
         road: "大雅區 中清路三段758巷",
-        category: "半導體零件外觀檢驗、機台操作、模組螺絲巡檢",
+        category: "半導體零件外觀檢驗、機台操作、螺絲巡檢",
         baseSalary: "時薪 $205 / H (中班津貼 +$30/H 即 $235/H)",
-        shifts: "日班 08:00~17:00 ｜ 中班 15:00~00:00 (中班需先早班受訓1個月)",
+        shifts: "日班 08:00~17:00 ｜ 中班 15:00~00:00 (中班需先早訓1個月)",
         allowance: "白天代訂便當 $80/餐、全廠冷氣房作業",
         bonuses: "加班費依法規乘 1.34 / 1.67",
-        medical: "免體檢",
-        isNoExam: true,
-        payDay: "每月固定發薪",
+        examType: "self",
+        examDesc: "需體檢 (同意書規範需一年內一般勞工體檢，可持收據上班，無補助)",
+        payDay: "每月 10 號發薪",
         maxSalary: "48,000 ～ 60,000+ 元",
-        features: ["免體檢", "冷氣房", "高時薪205起", "週休六日"],
-        highlight: "半導體核心廠房，中班時薪達 $235，加班月領最高上看 6 萬！"
+        features: ["需體檢無補助", "冷氣房", "高時薪205起", "週休六日"],
+        highlight: "半導體核心廠房，中班時薪達 $235，需自備一年內一般勞工體檢！"
       },
       {
         id: "greendot",
@@ -421,12 +407,12 @@
         shifts: "早班 07:50~16:20 ｜ 中班 15:50~00:20 ｜ 夜班 23:50~08:20",
         allowance: "中班津貼 $200/天、中夜班/夜班津貼 $300/天、夜班餐費 $70/天",
         bonuses: "早中班免費供餐、三節禮券、滿月享體檢補助最高 $750",
-        medical: "享體檢補助 (滿月補助上限 $750)",
-        isNoExam: false,
+        examType: "subsidized",
+        examDesc: "享體檢補助 (需3個月內報告，到職滿一個月補助上限 $750 元)",
         payDay: "每月 10 號發薪",
         maxSalary: "45,000 ～ 53,000+ 元",
         features: ["大廠穩定", "班別津貼", "享體檢補助", "免費供餐"],
-        highlight: "大雅指標性科技大廠，固定班別，夜班津貼+加班待遇優厚！"
+        highlight: "大雅指標性科技大廠，固定班別，滿月可請領體檢補助最高 750 元！"
       },
       {
         id: "jijia",
@@ -438,12 +424,12 @@
         shifts: "日班 08:00~17:10 ｜ 小夜 15:50~00:30 ｜ 大夜 23:50~08:30",
         allowance: "小夜津貼 +$30/H、大夜津貼 +$48/H、誤餐費 $80~$100/次",
         bonuses: "久任最高 $7,000、加班激勵最高 $4,000、夜班完訓獎金高達 $17,000",
-        medical: "免體檢",
-        isNoExam: true,
-        payDay: "每月固定發薪",
+        examType: "none",
+        examDesc: "免體檢 (同意書未規範體檢要求)",
+        payDay: "每月 10 號發薪",
         maxSalary: "48,000 ～ 55,000+ 元",
         features: ["免體檢", "冷氣房久坐", "高額完訓獎金", "週休二日"],
-        highlight: "冷氣房久坐舒適，夜班完訓實習獎金合計最高達 17,000 元！"
+        highlight: "冷氣房久坐舒適，同意書未規範體檢，夜班完訓實習獎金合計最高 17,000 元！"
       },
       {
         id: "cengde",
@@ -454,9 +440,9 @@
         baseSalary: "日薪 $1,700/天 + 餐費 $100/天 + 全勤 $2,000/月",
         shifts: "日班 08:00 ～ 17:00 (週休六日)",
         allowance: "外派津貼：外縣市 +$250/天 (包住宿+交通)；彰化 +$150/天 (專車接送)",
-        bonuses: "滿3個月體檢費實報實銷、三節與年終福利",
-        medical: "享體檢補助 (滿3個月實報實銷)",
-        isNoExam: false,
+        bonuses: "三節與年終福利",
+        examType: "subsidized",
+        examDesc: "享體檢補助 (任職滿3個月檢附收據實報實銷)",
         payDay: "每月固定發薪",
         maxSalary: "52,000 ～ 62,000+ 元",
         features: ["日薪1700", "外派包住", "享體檢補助", "週休六日"],
@@ -472,12 +458,12 @@
         shifts: "正常班 08:00 ～ 17:00 (中午休息1小時)",
         allowance: "週休二日、環境乾淨安靜、不須加班",
         bonuses: "享勞健保、特休、三節禮品",
-        medical: "免體檢",
-        isNoExam: true,
+        examType: "none",
+        examDesc: "免體檢 (同意書明確載明不須加班、免體檢)",
         payDay: "每月 10 號發薪",
         maxSalary: "31,000 元 (穩定準時下班)",
         features: ["免體檢", "冷氣久坐", "週休二日", "不須加班"],
-        highlight: "瑞士外商環境，純內勤生管排程，準時 17:00 下班！"
+        highlight: "瑞士外商環境，純內勤生管排程，明確免體檢，準時 17:00 下班！"
       },
       {
         id: "tuonasi_wh",
@@ -489,12 +475,12 @@
         shifts: "正常班 08:00 ～ 17:00 (需能配合加班)",
         allowance: "平日及休息日加班費依法加成計算",
         bonuses: "享勞健保、勞退、特休、三節禮品",
-        medical: "免體檢",
-        isNoExam: true,
+        examType: "none",
+        examDesc: "免體檢 (同意書未規範體檢)",
         payDay: "每月 10 號發薪",
         maxSalary: "40,000 ～ 45,000+ 元",
         features: ["免體檢", "冷氣房", "外商福利", "週休二日"],
-        highlight: "冷氣倉儲環境，出勤穩定，配合加班月領上看 4.5 萬！"
+        highlight: "冷氣倉儲環境，出勤穩定，同意書未規範體檢，配合加班月領上看 4.5 萬！"
       },
       {
         id: "fengyi",
@@ -506,29 +492,29 @@
         shifts: "小晚班固定 17:30 ～ 20:30 (每天固定兼職/加班3小時)",
         allowance: "廠內免費供餐、週休二日",
         bonuses: "加班費依 1.34 與 1.67 法規超額加成",
-        medical: "免體檢",
-        isNoExam: true,
-        payDay: "每月固定發薪",
+        examType: "none",
+        examDesc: "免體檢 (同意書未規範體檢)",
+        payDay: "每月 10 號發薪",
         maxSalary: "依時數累計 (挑戰 4.8萬~5.4萬)",
         features: ["免體檢", "小晚班3H", "兼職首選", "免費供餐"],
-        highlight: "小晚班 17:30~20:30 固定時段，適合兼差或副業增加收入！"
+        highlight: "小晚班 17:30~20:30 固定時段，免體檢，適合兼差增加收入！"
       },
       {
-        id: "yulun",
-        title: "大雅生技保健廠－包裝選別人員 (昱倫/廣得利)",
+        id: "stanley",
+        title: "大雅工具機械大廠－作業員 (史丹利七和)",
         area: "大雅",
-        road: "大雅區 民生路三段",
-        category: "膠囊錠劑選別、包裝、倉管 (冷氣房作業)",
-        baseSalary: "時薪 $196/H + 工作獎金 $1,000/月",
-        shifts: "日班 08:00 ～ 17:00 (休息1小時)",
-        allowance: "全廠冷氣房、環境乾淨衛生、週休二日",
-        bonuses: "享勞健保、特休、團保",
-        medical: "免體檢",
-        isNoExam: true,
+        road: "大雅區 永和路",
+        category: "機台操作、包裝、主管交辦事項",
+        baseSalary: "時薪 $196 / H",
+        shifts: "固定日班 08:00 ～ 17:00 (不加班)",
+        allowance: "開放式冷氣、廠區免費供餐、週休二日",
+        bonuses: "考核通過可轉正職",
+        examType: "self",
+        examDesc: "需體檢 (同意書明確載明：須做一般勞工體檢，可持收據報到，無體檢補助)",
         payDay: "每月 10 號發薪",
-        maxSalary: "36,000 ～ 43,000+ 元",
-        features: ["免體檢", "全廠冷氣房", "生技產業", "乾淨無味"],
-        highlight: "環境極度整潔舒適，男女不拘，工作單純易上手！"
+        maxSalary: "35,000 元 (固定工時不加班)",
+        features: ["需體檢無補助", "不加班", "免費供餐", "可轉正"],
+        highlight: "同意書明確要求一般勞工體檢且無補助；日班不加班生活規律！"
       },
       {
         id: "yonghu",
@@ -537,38 +523,37 @@
         road: "豐原區 榮春街 / 神岡區 豐洲路",
         category: "碳纖維複合材料裁切、成型、倉儲 (早班無限缺)",
         baseSalary: "底薪 $30,500 + 全勤 $1,000 = 基本 $31,500/月",
-        shifts: "早班 08:00~17:00 (大缺) ｜ 晚班 20:00~05:00",
+        shifts: "早班 08:00~17:00 ｜ 晚班 20:00~04:30",
         allowance: "晚班津貼 $600/天 (晚班月津貼可達 $13,200！)",
-        bonuses: "考核通過發放轉正獎金 $5,000、早班免費供餐",
-        medical: "免體檢",
-        isNoExam: true,
+        bonuses: "考核通過轉正獎金 $5,000、早班免費供餐",
+        examType: "self",
+        examDesc: "需體檢 (同意書明確載明需3個月內一般勞工體檢報告，可持收據報到，無補助)",
         payDay: "每月 10 號發薪",
         maxSalary: "48,000 ～ 58,000+ 元",
-        features: ["免體檢", "早班無限缺", "晚班津貼600/天", "轉正獎金5000"],
-        highlight: "早班大缺名額無上限！晚班每天津貼高達 $600 元超賺！"
+        features: ["需體檢無補助", "早班無限缺", "晚班津貼600/天", "轉正獎金5000"],
+        highlight: "早班大缺名額無上限！同意書明確要求一般體檢（無補助），晚班津貼高達 $600/天！"
       },
       {
         id: "bentu",
-        title: "大里汽機車大廠－機台/品檢員 (本土)",
+        title: "大里汽機車大廠－傳動元件品檢/技術員 (本土)",
         area: "大里",
         road: "大里區 四育街",
         category: "汽機車傳動零件加工、機台操作、品檢待判",
         baseSalary: "月薪制 $32,000 ～ $35,000 元 起",
-        shifts: "日班 08:00~17:00 ｜ 夜班 (需能配合輪班)",
-        allowance: "中班津貼 $300/天、夜班出勤津貼另計、提供員工餐廳",
+        shifts: "日班 08:00~17:00 ｜ 輪班制",
+        allowance: "中班津貼 $300/天、夜班津貼另計、提供員工餐廳",
         bonuses: "享年終獎金、定期員工旅遊、特休",
-        medical: "免體檢",
-        isNoExam: true,
-        payDay: "每月固定發薪",
+        examType: "subsidized",
+        examDesc: "享體檢補助 (同意書明確載明：須做一般勞工體檢，任職滿三個月各補助 $800 元)",
+        payDay: "每月 10 號發薪",
         maxSalary: "45,000 ～ 55,000+ 元",
-        features: ["免體檢", "知名老牌大廠", "享年終尾牙", "員工旅遊"],
-        highlight: "老字號汽機車大廠，底薪高達 $35,000，福利健全有保障！"
+        features: ["享體檢補助", "滿三個月補助800", "享年終尾牙", "員工旅遊"],
+        highlight: "老字號汽機車大廠，同意書明確載明滿三個月體檢補助 $800 元！"
       }
     ];
 
     let currentFilter = 'all';
 
-    // 渲染職缺卡片
     function renderJobs() {
       const grid = document.getElementById('jobGrid');
       const emptyState = document.getElementById('emptyState');
@@ -577,13 +562,11 @@
       grid.innerHTML = '';
 
       const filtered = jobs.filter(job => {
-        // Filter logic
         let matchesFilter = false;
         if (currentFilter === 'all') matchesFilter = true;
-        else if (currentFilter === '免體檢') matchesFilter = job.isNoExam;
+        else if (currentFilter === '免體檢') matchesFilter = (job.examType === 'none');
         else matchesFilter = job.area.includes(currentFilter) || job.road.includes(currentFilter);
 
-        // Search logic
         const matchesSearch = 
           job.title.toLowerCase().includes(searchTerm) ||
           job.area.toLowerCase().includes(searchTerm) ||
@@ -603,10 +586,14 @@
           const card = document.createElement('div');
           card.className = "bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-200 flex flex-col overflow-hidden";
           
-          // Badge colors
-          const examBadge = job.isNoExam 
-            ? `<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2 py-0.5 rounded text-xs">⚡ 免體檢</span>`
-            : `<span class="bg-blue-100 text-blue-800 border border-blue-300 font-bold px-2 py-0.5 rounded text-xs">🩺 享體檢補助</span>`;
+          let examBadge = '';
+          if (job.examType === 'none') {
+            examBadge = `<span class="bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold px-2 py-0.5 rounded text-xs">⚡ 免體檢</span>`;
+          } else if (job.examType === 'self') {
+            examBadge = `<span class="bg-amber-100 text-amber-900 border border-amber-300 font-bold px-2 py-0.5 rounded text-xs">⚠️ 需體檢 (無補助)</span>`;
+          } else {
+            examBadge = `<span class="bg-blue-100 text-blue-800 border border-blue-300 font-bold px-2 py-0.5 rounded text-xs">🩺 享體檢補助</span>`;
+          }
 
           card.innerHTML = `
             <div class="p-5 flex-grow">
@@ -658,7 +645,6 @@
       lucide.createIcons();
     }
 
-    // 篩選切換
     function setFilter(filter) {
       currentFilter = filter;
       document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -671,19 +657,25 @@
       renderJobs();
     }
 
-    // Modal 詳情彈窗
     function openModal(jobId) {
       const job = jobs.find(j => j.id === jobId);
       if (!job) return;
 
       const modalContent = document.getElementById('modalContent');
-      const examNotice = job.isNoExam 
-        ? `<div class="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded text-xs text-emerald-800 font-semibold mb-3">
-             ⚡ 體檢約定：本職缺依專案同意書約定【免體檢】，書面審核通過可直接安排上工！
-           </div>`
-        : `<div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded text-xs text-blue-800 font-semibold mb-3">
-             🩺 體檢約定：本職缺【${job.medical}】，保留收據於規定期限後申請！
+      let examNotice = '';
+      if (job.examType === 'none') {
+        examNotice = `<div class="bg-emerald-50 border-l-4 border-emerald-500 p-3 rounded text-xs text-emerald-800 font-semibold mb-3">
+             ⚡ 體檢約定：${job.examDesc}
            </div>`;
+      } else if (job.examType === 'self') {
+        examNotice = `<div class="bg-amber-50 border-l-4 border-amber-500 p-3 rounded text-xs text-amber-900 font-semibold mb-3">
+             ⚠️ 體檢約定：${job.examDesc}
+           </div>`;
+      } else {
+        examNotice = `<div class="bg-blue-50 border-l-4 border-blue-500 p-3 rounded text-xs text-blue-800 font-semibold mb-3">
+             🩺 體檢約定：${job.examDesc}
+           </div>`;
+      }
 
       modalContent.innerHTML = `
         <div class="flex items-center gap-2 mb-2">
@@ -742,7 +734,6 @@
       if (e.target.id === 'jobModal') closeModal();
     }
 
-    // 勾選直接帶入預約表單
     function selectForApply(jobTitle) {
       const input = document.getElementById('formJob');
       input.value = jobTitle;
@@ -750,7 +741,6 @@
       input.focus();
     }
 
-    // 表單處理：格式化並複製到剪貼簿，直接開啟艾瑪 LINE
     function handleFormSubmit(e) {
       e.preventDefault();
 
@@ -772,7 +762,6 @@ ${note ? '📝 備註說明：' + note : ''}
 
 （已於招募專區完成登記，請協助安排面試梯次，謝謝！）`;
 
-      // Copy to clipboard
       navigator.clipboard.writeText(msg).then(() => {
         alert('✅ 資料已自動複製到您的剪貼簿！\n按下確定後將開啟官方 LINE (@190ktlnc)，請直接在聊天室「貼上」傳送給艾瑪專員即可！');
         window.open('https://lin.ee/L0VkiWF', '_blank');
@@ -782,10 +771,8 @@ ${note ? '📝 備註說明：' + note : ''}
       });
     }
 
-    // 搜尋監聽
     document.getElementById('searchInput').addEventListener('input', renderJobs);
 
-    // 初始化渲染
     window.onload = () => {
       renderJobs();
       lucide.createIcons();
